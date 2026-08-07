@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-const BASIC_CHECKOUT_URL = 'https://zuckpay.com.br/checkout/plano-basico-200-tecnicas-profissionais-de-banho-e-tosa';
-const COMPLETE_CHECKOUT_URL = 'https://zuckpay.com.br/checkout/plano-completo-200-tecnicas-profissionais-de-banho-e-tosa';
-const UPGRADE_CHECKOUT_URL = 'https://zuckpay.com.br/checkout/plano-completo-200-tecnicas-profissionais-de-banho-e-tosa-1';
+const BASIC_CHECKOUT_URL = 'https://pay.kiwify.com.br/Iux41nG';
+const COMPLETE_CHECKOUT_URL = 'https://pay.kiwify.com.br/FcXkZoA';
+const UPGRADE_CHECKOUT_URL = 'https://pay.kiwify.com.br/KMnl7nm';
 
 const HERO_IMAGE = '/assets/banho/hero.webp';
 const PRODUCT_IMAGE = '/assets/banho/plano-completo.webp';
