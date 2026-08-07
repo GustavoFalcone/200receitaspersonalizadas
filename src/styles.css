@@ -82,7 +82,7 @@ h3 { line-height: 1.2; }
 .hero { min-height: calc(100svh - 43px); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px 18px 30px; text-align: center; background: var(--color-surface); }
 .heroEyebrow { display: inline-flex; width: fit-content; margin: 0 auto 12px; padding: 7px 13px; border-radius: 999px; background: var(--color-primary); color: var(--color-white); line-height: 1.2; }
 .heroCopy { width: 100%; }
-.hero h1 { width: 100%; max-width: 960px; margin: 0 auto 12px; font-size: clamp(.8rem, 4.35vw, 2.75rem); line-height: 1.12; text-align: center; }
+.hero h1 { width: 100%; max-width: 1020px; margin: 0 auto 12px; font-size: clamp(1rem, 4.8vw, 3.05rem); line-height: 1.12; text-align: center; }
 .hero h1 span { display: block; white-space: nowrap; }
 .heroHighlight { color: var(--color-accent); }
 .lead { max-width: 680px; margin: 0 auto 14px; color: var(--color-muted); font-size: clamp(.82rem, 3.45vw, .98rem); line-height: 1.48; }
@@ -107,13 +107,13 @@ h3 { line-height: 1.2; }
 .demoSection::before, .priceSection::before, .guarantee::before { content: ''; position: absolute; z-index: -1; inset: 0 0 auto; height: 190px; background: linear-gradient(180deg, var(--color-white) 0%, rgba(14, 90, 103, .04) 22%, rgba(14, 90, 103, .08) 46%, rgba(14, 90, 103, .20) 70%, rgba(14, 90, 103, .55) 89%, var(--color-forest) 100%); }
 .demoSection .eyebrow, .priceSection .eyebrow { color: var(--color-light-green); }
 .demoSection .sectionLead { max-width: 620px; margin: 0 auto; color: rgba(255, 255, 255, .78); }
-.deliverableCarousel { position: relative; max-width: 1060px; margin: 30px auto 0; padding: 18px 0; overflow: hidden; isolation: isolate; }
+.deliverableCarousel { --carousel-gap: 16px; --carousel-item-width: clamp(144px, 25vw, 240px); --carousel-ratio: 4 / 5.15; position: relative; max-width: 1120px; margin: 30px auto 0; padding: 18px 0; overflow: hidden; isolation: isolate; }
 .carouselGlow { position: absolute; z-index: -1; inset: 14% 18%; border-radius: 50%; background: rgba(255, 255, 255, .15); filter: blur(56px); }
 .deliverableViewport { display: grid; gap: 16px; width: 100%; transform: rotate(-1.5deg) scale(1.04); transform-origin: center; }
 .carouselRow { width: 100%; min-height: clamp(166px, 29vw, 284px); overflow: hidden; }
-.deliverableTrack { display: flex; width: max-content; gap: 0; will-change: transform; transform-style: flat; }
-.deliverableLoopGroup { display: flex; flex: 0 0 auto; gap: 16px; padding-right: 16px; }
-.deliverablePreview { flex: 0 0 clamp(128px, 23vw, 220px); aspect-ratio: 4 / 5.15; margin: 0; overflow: hidden; border: 1px solid rgba(255, 255, 255, .22); border-radius: 13px; background: var(--color-white); box-shadow: 0 14px 26px rgba(14, 90, 103, .25); }
+.deliverableTrack { display: flex; width: max-content; gap: 0; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.deliverableLoopGroup { display: flex; flex: 0 0 auto; gap: var(--carousel-gap); padding-right: var(--carousel-gap); }
+.deliverablePreview { flex: 0 0 var(--carousel-item-width); aspect-ratio: var(--carousel-ratio); margin: 0; overflow: hidden; border: 1px solid rgba(255, 255, 255, .22); border-radius: 13px; background: var(--color-white); box-shadow: 0 14px 26px rgba(14, 90, 103, .25); }
 .deliverablePreview img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
 .trackForward { animation: carouselForward 22s linear infinite; }
 .trackReverse { margin-left: 0; animation: carouselReverse 22s linear infinite; }
@@ -255,25 +255,24 @@ footer { padding: 24px 18px 118px; background: var(--color-charcoal); color: rgb
 @media (max-width: 699px) {
   .deliverableViewport { transform: none; }
   .carouselRow { contain: layout paint; }
-  .deliverableTrack { animation-duration: 18s; }
   .heroCopy { width: 100%; min-width: 0; }
-  .hero h1 { max-width: 100%; font-size: clamp(.93rem, 4.7vw, 1.95rem); }
+  .hero h1 { max-width: 100%; font-size: clamp(1.08rem, 5.4vw, 2.05rem); }
   .lead { width: 100%; font-size: clamp(.74rem, 2.8vw, .9rem); }
   .bonusBreakdown span { font-size: .74rem; }
 }
 
 @supports (-webkit-touch-callout: none) {
   @media (max-width: 699px) {
-    .deliverableTrack { will-change: auto; }
-    .trackForward { -webkit-animation: carouselForwardIOS 18s linear infinite; animation: carouselForwardIOS 18s linear infinite; }
-    .trackReverse { -webkit-animation: carouselReverseIOS 18s linear infinite; animation: carouselReverseIOS 18s linear infinite; }
+    .deliverableTrack { position: relative; left: 0; transform: none !important; will-change: left; -webkit-backface-visibility: visible; backface-visibility: visible; }
+    .trackForward { --ios-carousel-distance: 800px; -webkit-animation: iosCarouselForward 14s linear infinite !important; animation: iosCarouselForward 14s linear infinite !important; }
+    .trackReverse { --ios-carousel-distance: 640px; -webkit-animation: iosCarouselReverse 14s linear infinite !important; animation: iosCarouselReverse 14s linear infinite !important; }
   }
 }
 
-@-webkit-keyframes carouselForwardIOS { from { -webkit-transform: translateX(-33.333333%); transform: translateX(-33.333333%); } to { -webkit-transform: translateX(0); transform: translateX(0); } }
-@keyframes carouselForwardIOS { from { -webkit-transform: translateX(-33.333333%); transform: translateX(-33.333333%); } to { -webkit-transform: translateX(0); transform: translateX(0); } }
-@-webkit-keyframes carouselReverseIOS { from { -webkit-transform: translateX(0); transform: translateX(0); } to { -webkit-transform: translateX(-33.333333%); transform: translateX(-33.333333%); } }
-@keyframes carouselReverseIOS { from { -webkit-transform: translateX(0); transform: translateX(0); } to { -webkit-transform: translateX(-33.333333%); transform: translateX(-33.333333%); } }
+@-webkit-keyframes iosCarouselForward { from { left: calc(0px - var(--ios-carousel-distance)); } to { left: 0; } }
+@keyframes iosCarouselForward { from { left: calc(0px - var(--ios-carousel-distance)); } to { left: 0; } }
+@-webkit-keyframes iosCarouselReverse { from { left: 0; } to { left: calc(0px - var(--ios-carousel-distance)); } }
+@keyframes iosCarouselReverse { from { left: 0; } to { left: calc(0px - var(--ios-carousel-distance)); } }
 
 @media (min-width: 700px) {
   .section { padding: 82px 28px; }
@@ -287,7 +286,7 @@ footer { padding: 24px 18px 118px; background: var(--color-charcoal); color: rgb
 
 @media (min-width: 960px) {
   .hero { min-height: calc(100svh - 43px); padding: 34px max(40px, calc((100vw - 1180px) / 2)) 38px; }
-  .hero h1 { font-size: clamp(2.15rem, 3.1vw, 2.75rem); }
+  .hero h1 { font-size: clamp(2.4rem, 3.45vw, 3.05rem); }
   .heroMedia { width: min(52vw, 600px); max-width: none; }
   .audienceGrid { grid-template-columns: repeat(4, 1fr); }
   .bonusGrid { grid-template-columns: repeat(4, 1fr); }
@@ -300,7 +299,7 @@ footer { padding: 24px 18px 118px; background: var(--color-charcoal); color: rgb
   .topCountdown { font-size: .57rem; }
   .section { padding-inline: 14px; }
   .completePrice { font-size: 3.2rem; }
-  .hero h1 { font-size: clamp(.9rem, 4.65vw, 1.08rem); }
+  .hero h1 { font-size: clamp(1.05rem, 5.25vw, 1.2rem); }
   .lead { font-size: .74rem; }
 }
 
