@@ -4,8 +4,8 @@ const BASIC_CHECKOUT_URL = 'https://zuckpay.com.br/checkout/plano-basico-200-tec
 const COMPLETE_CHECKOUT_URL = 'https://zuckpay.com.br/checkout/plano-completo-200-tecnicas-profissionais-de-banho-e-tosa';
 const UPGRADE_CHECKOUT_URL = 'https://zuckpay.com.br/checkout/plano-completo-200-tecnicas-profissionais-de-banho-e-tosa-1';
 
-const HERO_IMAGE = 'https://i.postimg.cc/02LbFQnZ/Chat-GPT-Image-6-de-ago-de-2026-17-14-40.png';
-const PRODUCT_IMAGE = 'https://i.postimg.cc/50LSDTd7/Chat-GPT-Image-6-de-ago-de-2026-17-45-02.png';
+const HERO_IMAGE = '/assets/banho/hero.webp';
+const PRODUCT_IMAGE = '/assets/banho/plano-completo.webp';
 
 const audienceCards = [
   ['Banhistas e auxiliares', 'Para consultar procedimentos, pelagens e cuidados sem depender apenas da memória.'],
@@ -15,22 +15,22 @@ const audienceCards = [
 ];
 
 const bonuses = [
-  { label: 'BÔNUS 01', title: 'Atlas Visual de Pelagens e Cuidados', text: 'Identifique os principais tipos de pelagem e entenda os cuidados mais adequados para cada estrutura de pelo.', meta: 'GRÁTIS HOJE', value: 'R$ 23,00', image: 'https://i.postimg.cc/rppbX8Qb/Chat-GPT-Image-6-de-ago-de-2026-17-41-40.png' },
-  { label: 'BÔNUS 02', title: 'Manual Visual de Ferramentas, Lâminas e Pentes', text: 'Consulte a função, a aplicação e os principais cuidados de uso das ferramentas da rotina.', meta: 'GRÁTIS HOJE', value: 'R$ 17,00', image: 'https://i.postimg.cc/SsBtMckR/Chat-GPT-Image-6-de-ago-de-2026-17-42-16.png' },
-  { label: 'BÔNUS 03', title: 'Guia de Segurança e Manejo no Banho e Tosa', text: 'Reconheça sinais de estresse, cuide de áreas sensíveis e conduza cada atendimento com mais controle, cuidado e segurança.', meta: 'GRÁTIS HOJE', value: 'R$ 27,00', image: 'https://i.postimg.cc/Kvrs1KVS/Chat-GPT-Image-6-de-ago-de-2026-17-42-53.png' },
-  { label: 'BÔNUS 04', title: 'Certificado de Conclusão', text: 'Registre a conclusão do conteúdo com um certificado digital para currículo ou portfólio.', meta: 'GRÁTIS HOJE', value: 'R$ 20,00', image: 'https://i.postimg.cc/yNWfpLNx/Chat-GPT-Image-6-de-ago-de-2026-17-43-32.png' },
+  { label: 'BÔNUS 01', title: 'Atlas Visual de Pelagens e Cuidados', text: 'Identifique os principais tipos de pelagem e entenda os cuidados mais adequados para cada estrutura de pelo.', meta: 'GRÁTIS HOJE', value: 'R$ 23,00', image: '/assets/banho/bonus-01.webp' },
+  { label: 'BÔNUS 02', title: 'Manual Visual de Ferramentas, Lâminas e Pentes', text: 'Consulte a função, a aplicação e os principais cuidados de uso das ferramentas da rotina.', meta: 'GRÁTIS HOJE', value: 'R$ 17,00', image: '/assets/banho/bonus-02.webp' },
+  { label: 'BÔNUS 03', title: 'Guia de Segurança e Manejo no Banho e Tosa', text: 'Reconheça sinais de estresse, cuide de áreas sensíveis e conduza cada atendimento com mais controle, cuidado e segurança.', meta: 'GRÁTIS HOJE', value: 'R$ 27,00', image: '/assets/banho/bonus-03.webp' },
+  { label: 'BÔNUS 04', title: 'Certificado de Conclusão', text: 'Registre a conclusão do conteúdo com um certificado digital para currículo ou portfólio.', meta: 'GRÁTIS HOJE', value: 'R$ 20,00', image: '/assets/banho/bonus-04.webp' },
 ];
 
 const deliverablePages = [
-  'https://i.postimg.cc/J0CRKDMT/image.png',
-  'https://i.postimg.cc/k5V9mF5c/image.png',
-  'https://i.postimg.cc/qqrdyPxb/image.png',
-  'https://i.postimg.cc/qvFVjhGd/image.png',
-  'https://i.postimg.cc/Rhd2fNFx/image.png',
-  'https://i.postimg.cc/QCfnCw45/image.png',
-  'https://i.postimg.cc/9FNnh3wN/image.png',
-  'https://i.postimg.cc/vBMPzbCV/image.png',
-  'https://i.postimg.cc/XJV85xyL/image.png',
+  '/assets/banho/deliverable-01.webp',
+  '/assets/banho/deliverable-02.webp',
+  '/assets/banho/deliverable-03.webp',
+  '/assets/banho/deliverable-04.webp',
+  '/assets/banho/deliverable-05.webp',
+  '/assets/banho/deliverable-06.webp',
+  '/assets/banho/deliverable-07.webp',
+  '/assets/banho/deliverable-08.webp',
+  '/assets/banho/deliverable-09.webp',
 ];
 
 const basicItems = [
@@ -124,7 +124,7 @@ function FlipCountdown({ targetTime }) {
 
 function DeliverableCarousel() {
   const renderRow = (items, className) => <div className="carouselRow" aria-hidden="true"><div className={`deliverableTrack ${className}`}>
-    {[0, 1, 2].map((loop) => <div className="deliverableLoopGroup" key={`${className}-group-${loop}`}>{items.map((src, index) => <figure className="deliverablePreview" key={`${className}-${loop}-${index}`}><img src={src} alt="" loading="eager" decoding="async" fetchPriority={index === 0 && loop === 0 ? 'high' : 'low'} /></figure>)}</div>)}
+    {[0, 1, 2].map((loop) => <div className="deliverableLoopGroup" key={`${className}-group-${loop}`}>{items.map((src, index) => <figure className="deliverablePreview" key={`${className}-${loop}-${index}`}><img src={src} alt="" loading="lazy" decoding="async" fetchPriority="low" /></figure>)}</div>)}
   </div></div>;
   return <div className="deliverableCarousel" role="group" aria-label="Prévia de páginas internas do material"><div className="carouselGlow" aria-hidden="true"/><div className="deliverableViewport">{renderRow(deliverablePages.slice(0, 5), 'trackForward')}{renderRow(deliverablePages.slice(5), 'trackReverse')}</div></div>;
 }
@@ -151,7 +151,7 @@ function UpgradeModal({ onClose }) {
       <p className="upgradeEyebrow">ANTES DE CONTINUAR</p>
       <h2 id="upgrade-title">Leve o material completo</h2>
       <p>Além das +200 técnicas, o Plano Completo inclui quatro materiais complementares para aprofundar sua consulta.</p>
-      <img src={PRODUCT_IMAGE} alt="Materiais incluídos na oferta" />
+      <img src={PRODUCT_IMAGE} alt="Materiais incluídos na oferta" width="1280" height="853" decoding="async" />
       <ul><li>+200 técnicas profissionais</li><li>Atlas Visual de Pelagens e Cuidados</li><li>Manual Visual de Ferramentas, Lâminas e Pentes</li><li>Guia de Segurança e Manejo no Banho e Tosa</li><li>Certificado de Conclusão</li><li>Acesso digital imediato</li></ul>
       <strong>TOTAL: R$ 17,90</strong>
       <a className="upgradeButton" href={UPGRADE_CHECKOUT_URL}>QUERO O PLANO COMPLETO</a>
@@ -181,11 +181,11 @@ export default function App() {
 
       <section className="section demoSection reveal"><h2>Confira tudo o que preparamos para você</h2><p className="sectionLead">Técnicas visuais divididas por porte, raça, pelagem e etapa do atendimento para você localizar o que precisa sem complicação.</p><DeliverableCarousel/><div className="pillRow"><span>PORTE PEQUENO</span><span>PORTE MÉDIO</span><span>PORTE GRANDE</span></div></section>
 
-      <section className="section bonusSection reveal"><p className="eyebrow">TUDO EM UM SÓ ACESSO</p><h2>Veja tudo o que acompanha seu acesso</h2><p className="bonusIntro">O manual principal e quatro materiais complementares para ampliar sua consulta e organizar seu aprendizado.</p><div className="bonusGrid">{bonuses.map((bonus) => <article className="bonusCard" key={bonus.title}><span className="bonusNumber">{bonus.label}</span><figure className="bonusVisual"><img src={bonus.image} alt="Materiais incluídos na oferta" loading="lazy"/></figure><h3>{bonus.title}</h3><p>{bonus.text}</p><div className="bonusPrice"><s>{bonus.value}</s><strong>{bonus.meta}</strong></div></article>)}</div><div className="bonusTotal"><span className="bonusTotalTag">SEU ACESSO COMPLETO</span><h3>Somando tudo o que você vai levar</h3><div className="bonusBreakdown">{bonuses.map((bonus) => <div key={bonus.title}><span>{bonus.title}</span><s>{bonus.value}</s></div>)}</div><div className="bonusSum"><span>VALOR TOTAL DOS MATERIAIS</span><strong>R$ 87,00</strong></div><p>Hoje, você pode acessar tudo por apenas</p><b>R$ 0 <small>— GRÁTIS</small></b></div></section>
+      <section className="section bonusSection reveal"><p className="eyebrow">TUDO EM UM SÓ ACESSO</p><h2>Veja tudo o que acompanha seu acesso</h2><p className="bonusIntro">O manual principal e quatro materiais complementares para ampliar sua consulta e organizar seu aprendizado.</p><div className="bonusGrid">{bonuses.map((bonus) => <article className="bonusCard" key={bonus.title}><span className="bonusNumber">{bonus.label}</span><figure className="bonusVisual"><img src={bonus.image} alt="Materiais incluídos na oferta" width="1280" height="960" loading="lazy" decoding="async"/></figure><h3>{bonus.title}</h3><p>{bonus.text}</p><div className="bonusPrice"><s>{bonus.value}</s><strong>{bonus.meta}</strong></div></article>)}</div><div className="bonusTotal"><span className="bonusTotalTag">SEU ACESSO COMPLETO</span><h3>Somando tudo o que você vai levar</h3><div className="bonusBreakdown">{bonuses.map((bonus) => <div key={bonus.title}><span>{bonus.title}</span><s>{bonus.value}</s></div>)}</div><div className="bonusSum"><span>VALOR TOTAL DOS MATERIAIS</span><strong>R$ 87,00</strong></div><p>Hoje, você pode acessar tudo por apenas</p><b>R$ 0 <small>— GRÁTIS</small></b></div></section>
 
       <section className="priceSection" id="checkout"><div className="priceIntro reveal"><p className="eyebrow">ESCOLHA SEU ACESSO</p><h2>Escolha o <span className="priceTitleHighlight">Melhor Plano Para Você</span></h2><p className="offerDeadline">A diferença está nos materiais complementares incluídos em cada opção.</p><FlipCountdown targetTime={offerEndsAt} /></div>
         <article className="basicCard reveal"><p className="planEyebrow">PARA COMEÇAR</p><h3>Plano Básico</h3><p>Acesso somente ao material principal.</p><div className="basicPrice">R$ 10,00</div><PlanList items={basicItems} basic/><button className="planButton basicButton" type="button" onClick={() => setShowUpgrade(true)}>QUERO O PLANO BÁSICO</button><TrustStrip/></article>
-        <article className="completeCard reveal"><span className="featuredBadge">MAIS ESCOLHIDO</span><h3>Plano Completo</h3><p>O manual principal com os quatro materiais complementares.</p><figure className="productImage"><img src={PRODUCT_IMAGE} alt="Imagem ilustrativa do plano" loading="lazy"/></figure><p className="priceAnchor">De R$ 97,00 por apenas</p><div className="completePrice">R$ 27,90</div><PlanList items={completeCoreItems}/><div className="completeBonusBox"><p>Leve o material completo para consultar técnicas, pelagens e ferramentas em um único acesso.</p><PlanList items={completeBonusItems}/></div><a className="planButton completeButton" href={COMPLETE_CHECKOUT_URL}>QUERO O ACESSO COMPLETO</a><TrustStrip inverse/></article>
+        <article className="completeCard reveal"><span className="featuredBadge">MAIS ESCOLHIDO</span><h3>Plano Completo</h3><p>O manual principal com os quatro materiais complementares.</p><figure className="productImage"><img src={PRODUCT_IMAGE} alt="Imagem ilustrativa do plano" width="1280" height="853" loading="lazy" decoding="async"/></figure><p className="priceAnchor">De R$ 97,00 por apenas</p><div className="completePrice">R$ 27,90</div><PlanList items={completeCoreItems}/><div className="completeBonusBox"><p>Leve o material completo para consultar técnicas, pelagens e ferramentas em um único acesso.</p><PlanList items={completeBonusItems}/></div><a className="planButton completeButton" href={COMPLETE_CHECKOUT_URL}>QUERO O ACESSO COMPLETO</a><TrustStrip inverse/></article>
       </section>
 
       <section className="section guarantee reveal"><div className="guaranteeSeal"><strong>7</strong><span>DIAS</span></div><div><h2>Garantia simples de 7 dias</h2><p>Você pode acessar o material e conferir se ele faz sentido para sua rotina. Caso decida que não é para você dentro de 7 dias, solicite o reembolso conforme as condições da compra.</p></div></section>
