@@ -107,7 +107,7 @@ h3 { line-height: 1.2; }
 .demoSection::before, .priceSection::before, .guarantee::before { content: ''; position: absolute; z-index: -1; inset: 0 0 auto; height: 190px; background: linear-gradient(180deg, var(--color-white) 0%, rgba(14, 90, 103, .04) 22%, rgba(14, 90, 103, .08) 46%, rgba(14, 90, 103, .20) 70%, rgba(14, 90, 103, .55) 89%, var(--color-forest) 100%); }
 .demoSection .eyebrow, .priceSection .eyebrow { color: var(--color-light-green); }
 .demoSection .sectionLead { max-width: 620px; margin: 0 auto; color: rgba(255, 255, 255, .78); }
-.deliverableCarousel { --carousel-gap: 16px; --carousel-item-width: clamp(144px, 25vw, 240px); --carousel-ratio: 4 / 5.15; position: relative; max-width: 1120px; margin: 30px auto 0; padding: 18px 0; overflow: hidden; isolation: isolate; }
+.deliverableCarousel { --carousel-gap: 16px; --carousel-item-width: clamp(184px, 32vw, 280px); --carousel-ratio: 4 / 5.15; position: relative; max-width: 1200px; margin: 30px auto 0; padding: 18px 0; overflow: hidden; isolation: isolate; }
 .carouselGlow { position: absolute; z-index: -1; inset: 14% 18%; border-radius: 50%; background: rgba(255, 255, 255, .15); filter: blur(56px); }
 .deliverableViewport { display: grid; gap: 16px; width: 100%; transform: rotate(-1.5deg) scale(1.04); transform-origin: center; }
 .carouselRow { width: 100%; min-height: clamp(166px, 29vw, 284px); overflow: hidden; }
@@ -264,8 +264,8 @@ footer { padding: 24px 18px 118px; background: var(--color-charcoal); color: rgb
 @supports (-webkit-touch-callout: none) {
   @media (max-width: 699px) {
     .deliverableTrack { position: relative; left: 0; transform: none !important; will-change: left; -webkit-backface-visibility: visible; backface-visibility: visible; }
-    .trackForward { --ios-carousel-distance: 800px; -webkit-animation: iosCarouselForward 14s linear infinite !important; animation: iosCarouselForward 14s linear infinite !important; }
-    .trackReverse { --ios-carousel-distance: 640px; -webkit-animation: iosCarouselReverse 14s linear infinite !important; animation: iosCarouselReverse 14s linear infinite !important; }
+    .trackForward { --ios-carousel-distance: 1000px; -webkit-animation: iosCarouselForward 14s linear infinite !important; animation: iosCarouselForward 14s linear infinite !important; }
+    .trackReverse { --ios-carousel-distance: 800px; -webkit-animation: iosCarouselReverse 14s linear infinite !important; animation: iosCarouselReverse 14s linear infinite !important; }
   }
 }
 
