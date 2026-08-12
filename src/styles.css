@@ -321,7 +321,7 @@ footer strong { color: var(--color-white); }
   .lead { width: 100%; max-width: 560px; margin: 0 auto 4px; font-size: clamp(.68rem, 2.45vw, .8rem); line-height: 1.42; text-align: center; }
   .heroMedia { width: min(96vw, 600px); margin: -2px auto 0; }
   .heroImage { width: 94%; margin-top: 0; }
-  .heroMedia .cta { width: 100%; max-width: 430px; min-height: 66px; margin-top: 12px; padding: 14px 18px; border-radius: 14px; font-size: .92rem; font-weight: 800; letter-spacing: .035em; }
+  .heroMedia .cta { position: relative; left: calc(50vw - 50% - 18px); width: 100%; max-width: 430px; min-height: 66px; box-sizing: border-box; margin: 12px auto 0; padding: 14px 18px; border-radius: 14px; font-size: .92rem; font-weight: 800; letter-spacing: .035em; }
   .bonusBreakdown span { font-size: .74rem; }
   .bonusTotal { padding-inline: 15px; }
   .calculatorTop { margin-inline: -15px; }
