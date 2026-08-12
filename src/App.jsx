@@ -6,7 +6,7 @@ const BASIC_CHECKOUT_URL = 'https://pay.kiwify.com.br/FTpm25h';
 const COMPLETE_CHECKOUT_URL = 'https://pay.kiwify.com.br/Sv9jFdu';
 const UPGRADE_CHECKOUT_URL = 'https://pay.kiwify.com.br/OjPeJry';
 
-const HERO_IMAGE = '/assets/receitas/hero.webp';
+const HERO_IMAGE = '/assets/receitas/hero-nova.webp';
 const PRODUCT_IMAGE = '/assets/receitas/plano-completo.webp';
 
 const audienceCards = [
@@ -320,7 +320,7 @@ export default function App() {
     <main>
       <section className="hero reveal">
         <div className="heroCopy"><p className="heroEyebrow">MATERIAL DIGITAL • ACESSO IMEDIATO</p><h1 aria-label="+200 Receitas de Doces Personalizados para criar doces mais bonitos e valorizar cada encomenda"><span className="headlineDesktop" aria-hidden="true"><span className="heroHighlight">+200 Receitas de Doces Personalizados para criar</span><span>doces mais bonitos e valorizar cada encomenda</span></span><span className="headlineMobile" aria-hidden="true"><span className="heroHighlight">+200 Receitas de Doces</span><span className="heroHighlight">Personalizados para criar</span><span>doces mais bonitos e valorizar</span><span>cada encomenda</span></span></h1><p className="lead">Tenha centenas de receitas e ideias visuais reunidas em um só lugar para consultar quando precisar, descobrir novos doces e levar muito mais variedade para suas encomendas.</p></div>
-        <div className="heroMedia"><img className="heroImage" src={HERO_IMAGE} alt="Prévia do material digital com receitas de doces personalizados" width="1122" height="1402" loading="eager" fetchPriority="high" decoding="async"/><CTA className="primaryPulse">QUERO ACESSAR AS +200 RECEITAS</CTA><p className="microcopy"><span>✓ Material 100% digital</span><span>✓ Acesso imediato</span><span>✓ Consulte pelo celular, tablet ou computador</span></p></div>
+        <div className="heroMedia"><img className="heroImage" src={HERO_IMAGE} alt="Prévia do material digital com receitas de doces personalizados" width="1024" height="1345" loading="eager" fetchPriority="high" decoding="async"/><CTA className="primaryPulse">QUERO ACESSAR AS +200 RECEITAS</CTA><p className="microcopy"><span>✓ Material 100% digital</span><span>✓ Acesso imediato</span><span>✓ Consulte pelo celular, tablet ou computador</span></p></div>
       </section>
 
       <section className="section reveal"><h2>Esse material foi feito para você que...</h2><div className="audienceGrid">{audienceCards.map(([title, text]) => <article className="audienceCard" key={title}><span className="check">✓</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div></section>
